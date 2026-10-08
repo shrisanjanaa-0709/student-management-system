@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+
 function StudentProfile(props) {
+  useEffect(() => {
+    const previousTitle = document.title;
+
+    document.title = `Practice Sessions: ${props.practiceCount}`;
+
+    return () => {
+      document.title = previousTitle;
+    };
+  }, [props.practiceCount]);
+
   return (
     <div
       style={{
@@ -8,8 +20,14 @@ function StudentProfile(props) {
       }}
     >
       <p>Name: {props.name}</p>
+
       <p>Department: {props.department}</p>
+
       <p>Year: {props.year}</p>
+
+      <p>
+        Practice Sessions Completed: {props.practiceCount}
+      </p>
     </div>
   );
 }
