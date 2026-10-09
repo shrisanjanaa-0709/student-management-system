@@ -1,7 +1,8 @@
+
 function Footer() {
   return (
-    <footer>
-      © 2026 Student Management System
+    <footer className="footer">
+      <p>© 2026 Amazon Product Store</p>
     </footer>
   );
 }
